@@ -1,7 +1,7 @@
 module.exports = {
   title: 'Nono\'s Blog',
   description: '前端工程師的紀錄',
-  theme: '@vuepress/blog',
+  theme: require.resolve('../..'),
   themeConfig: {
     nav: [
       {
