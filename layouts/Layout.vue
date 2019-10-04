@@ -12,11 +12,12 @@
     </div>
   </div> -->
   <v-container >
-    <v-row justify="center" alngn="top" class="fill-height">
+    <v-row justify="left" alngn="top" class="fill-height">
       <v-col
         v-for="page in $pagination.pages"
         :key="page.path"
-        cols="6"
+        sm="12"
+        md="6"
       >
         <v-card
           tile
@@ -43,16 +44,31 @@
           <v-card-actions class="mt-auto">
             <v-btn color="amber lighten-2" small outlined>read more</v-btn>
             <v-spacer></v-spacer>
-            {{ new Date(page.frontmatter.date.trim()).toDateString() }}
+            <span class="font-italic font-weight-light overline">{{ new Date(page.frontmatter.date.trim()).toDateString() }}</span>
           </v-card-actions>
         </v-card>
       </v-col>
+    </v-row>
+    <v-row class="text-center">
+      <v-pagination
+        :value="$pagination.paginationIndex + 1"
+        circle
+        :length="$pagination.length"
+        @input="toPage"
+      ></v-pagination>
     </v-row>
   </v-container>
 </template>
 
 <script>
 export default {
+
+  methods: {
+    toPage (page) {
+      const path = page > 1 ? `/page/${page}` : `/`
+      this.$router.push(path)
+    }
+  },
   created () {
   }
 }
@@ -67,14 +83,9 @@ export default {
     transition: .6s
     background-size: 100%
     background-position: 0 0
+
     &:hover
       background-size: 100%
-      background-position: 0px 150px
-      // background-image: linear-gradient(to top, rgba(0, 0, 0, 0.4) 0%, transparent 72px)
-// 
-  // article:hover
-  //   .bottom-gradient
-  //     background-size: 200px 200px
-  //     background-position: 200px 200px
-      // background-size: 100%
+      background-image: linear-gradient(to top, rgba(0, 0, 0, 0.4) 0%, transparent 72px)
+ 
 </style>  
