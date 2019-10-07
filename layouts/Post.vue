@@ -6,7 +6,7 @@
       <div>
         <span>{{ formatDate }}</span>
         <v-icon small>mdi-folder</v-icon>
-        <span class="text-right" v-for="(tag, i) in $page.frontmatter.tag" :key="i">
+        <span class="text-right" v-for="(tag, i) in $page.frontmatter.tags" :key="i">
           {{ tag }}
         </span>
       </div>

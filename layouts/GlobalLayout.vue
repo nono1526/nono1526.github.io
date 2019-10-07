@@ -8,7 +8,7 @@
 </template>
 
 <script>
-  import GlobalLayout from './Layout.vue'
+  import GlobalLayout from '@app/components/GlobalLayout.vue'
   import CoreHeader from './vuetify/core/CoreHeader'
   export default {
     components: {

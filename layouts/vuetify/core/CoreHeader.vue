@@ -15,10 +15,8 @@
 </template>
 
 <script>
-import SearchBox from '@SearchBox'
 export default {
-  name: 'core-header',
-  components: { SearchBox }
+  name: 'core-header'
 }
 </script>
 
