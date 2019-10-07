@@ -1,16 +1,15 @@
 module.exports = {
-  title: 'Nono\'s Blog',
+  title: 'Nono',
   description: '前端工程師的紀錄',
   theme: require.resolve('../..'),
+  head: [
+    ['link', { rel: "icon", type: "image/png", sizes: "32x32", href: "/favicons/favicon-32x32.png"}],
+  ],
   themeConfig: {
     nav: [
       {
-        text: '首頁',
-        link: '/',
-      },
-      {
         text: '文章列表',
-        link: '/archive/',
+        link: '/',
       },
       {
         text: 'Tags',

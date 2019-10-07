@@ -4,9 +4,9 @@
  * https://v1.vuepress.vuejs.org/guide/basic-config.html#app-level-enhancements
  */
 
+import '@mdi/font/css/materialdesignicons.css'
 import Vuetify from 'vuetify'
 import 'vuetify/dist/vuetify.min.css'
-import '@mdi/font/css/materialdesignicons.css'
 
 export default ({
   Vue, // the version of Vue being used in the VuePress app
@@ -18,5 +18,9 @@ export default ({
   // src/plugins/vuetify.js
 
 Vue.use(Vuetify)
-options.vuetify = new Vuetify({})
+options.vuetify = new Vuetify({
+    icons: {
+      iconfont: 'mdi',
+    },
+  })
 }
