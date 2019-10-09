@@ -48,13 +48,12 @@
 </template>
 
 <script>
+import { formatDateToChinese } from '../../../util/time'
 export default {
   name: 'base-list-layout',
   methods: {
     formatDate (page) {
-      const date = new Date(page.frontmatter.date)
-      const dayMapping = ['日', '一', '二', '三', '四', '五', '六']
-      return `${date.getFullYear()}年${date.getMonth() + 1}月${date.getDate()}日 星期${dayMapping[date.getDay()]}`
+      return formatDateToChinese(page.frontmatter.date)
     },
     toPage (page) {
       const path = page > 1 ? `/page/${page}` : `/`
