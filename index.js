@@ -28,7 +28,7 @@ module.exports = (themeConfig, ctx) => {
       {
         id: "tag",
         keys: ['tag', 'tags'],
-        path: '/tags/',
+        path: '/tag/',
         // layout: 'Tag',  defaults to `FrontmatterKey.vue`
         frontmatter: { title: 'Tag' },
         pagination: {

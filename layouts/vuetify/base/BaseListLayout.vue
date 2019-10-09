@@ -29,9 +29,9 @@
           </router-link>
           <v-card-text>{{ page.frontmatter.summary || page.summary }}</v-card-text>
           <v-card-actions class="mt-auto">
-            <v-btn color="amber lighten-2" small outlined>read more</v-btn>
+            <v-btn color="amber lighten-2" small outlined :to="page.path">read more</v-btn>
             <v-spacer></v-spacer>
-            <span class="font-italic font-weight-light overline mt-auto">{{ new Date(page.frontmatter.date.trim()).toDateString() }}</span>
+            <span class="font-italic font-weight-light overline mt-auto">{{ formatDate(page) }}</span>
           </v-card-actions>
         </v-card>
       </v-col>
@@ -51,6 +51,11 @@
 export default {
   name: 'base-list-layout',
   methods: {
+    formatDate (page) {
+      const date = new Date(page.frontmatter.date)
+      const dayMapping = ['日', '一', '二', '三', '四', '五', '六']
+      return `${date.getFullYear()}年${date.getMonth() + 1}月${date.getDate()}日 星期${dayMapping[date.getDay()]}`
+    },
     toPage (page) {
       const path = page > 1 ? `/page/${page}` : `/`
       this.$router.push(path)

@@ -6,7 +6,9 @@
     dark
     dense
   >
-    <v-toolbar-title>{{ $site.title }}</v-toolbar-title>
+    <v-toolbar-title >
+      <router-link :to="'/'" class="white--text">{{ $site.title }}</router-link>
+    </v-toolbar-title>
     <div class="flex-grow-1"></div>
     <v-btn color="amber lighten-2" text v-for="item in $themeConfig.nav" :key="item.link" :to="item.link">
       {{item.text}}

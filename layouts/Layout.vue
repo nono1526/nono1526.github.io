@@ -10,7 +10,8 @@ import BaseListLayout from './vuetify/base/BaseListLayout'
 export default {
   components: {
     BaseListLayout
-  }
+  },
+  
 }
 </script>
 
