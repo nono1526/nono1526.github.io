@@ -6,7 +6,7 @@ date: 2019-10-14
 author: Nono
 location: Kaohsiung
 summary: 簡單介紹一下 Vuepress
-cover: https://i.imgur.com/RKNJLEv.jpg
+cover: https://i.imgur.com/CAzbjks.jpg
 ---
 
 ::: slot header
