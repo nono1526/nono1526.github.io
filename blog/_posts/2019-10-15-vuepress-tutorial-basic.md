@@ -61,13 +61,10 @@ Vuepress 背後是透過 vue、vue-router、webpace 來做運行，所以熟悉�
 
 * Markdown slot: 可以讓你把 Markdown 的內容切成不同等分來做渲染，可以讓你的文章自由度更高！
 * 支援 [YAML front-matter](https://jekyllrb.com/docs/front-matter/): 可以將 Markdown 中一些資料傳遞到靜態網頁上。
-* 在 Markdown 上使用 Vue component: 這點滿吸引我的，感覺很有趣
-
-
-* [@vuepress/plugin-google-analytics](https://github.com/vuejs/vuepress/tree/master/packages/%40vuepress/plugin-google-analytics)
-* [@vuepress/plugin-pwa](@vuepress/plugin-pwa)
-
-如果你真的覺得不夠自己寫一個也是沒問題的！
+* 在 Markdown 上使用 Vue component: 這點滿吸引我的，感覺很有趣。
+* 自由的 plugin & theme: 如果你覺得官方提供的不夠多，你也能自己開發並和大家分享。
+  * [@vuepress/plugin-google-analytics](https://github.com/vuejs/vuepress/tree/master/packages/%40vuepress/plugin-google-analytics)
+  * [@vuepress/plugin-pwa](@vuepress/plugin-pwa)
 
 ## 結論
 如果你不想花時間自己弄個人 Blog，想快速有漂亮的 Blog 的話，我自己建議是不要用 Vuepress 會比較好，原因是已經寫好可選的 `theme` 比較少一些。
