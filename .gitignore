@@ -65,7 +65,7 @@ typings/
 .next
 
 # vuepress build output
-.vuepress/dist
+/.vuepress/dist
 
 # Serverless directories
 .serverless
