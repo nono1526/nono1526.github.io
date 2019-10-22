@@ -44,8 +44,48 @@ module.exports = (themeConfig, ctx) => {
     ? modifyBlogPluginOptions(defaultBlogPluginOptions)
     : defaultBlogPluginOptions
 
+  const customBlockPluginOptions = [
+    [
+      'vuepress-plugin-container',
+      {
+        type: 'tip',
+        defaultTitle: '提示',
+      },
+    ],
+    [
+      'vuepress-plugin-container',
+      {
+        type: 'right',
+        defaultTitle: '',
+      },
+    ],
+    [
+      'vuepress-plugin-container',
+      {
+        type: 'theorem',
+        before: info => `<div class="theorem"><p class="title">${info}</p>`,
+        after: '</div>',
+      },
+    ],
+
+    // this is how VuePress Default Theme use this plugin
+    [
+      'vuepress-plugin-container',
+      {
+        type: 'tip',
+        defaultTitle: {
+          '/': 'TIP',
+          '/zh/': '提示',
+        },
+      },
+    ],
+  ]
+
   const plugins = [
     '@vuepress/plugin-nprogress',
+    ...customBlockPluginOptions,
+    // you can use this plugin multiple times
+    
     ['@vuepress/medium-zoom', true],
     ['@vuepress/search', {
       searchMaxSuggestions: 10

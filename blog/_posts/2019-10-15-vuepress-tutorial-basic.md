@@ -48,10 +48,9 @@ Vuepress 背後是透過 vue、vue-router、webpace 來做運行，所以熟悉�
 ![](https://i.imgur.com/lNYbrDy.png)
 
 ::: tip
-小提醒
-`npx vuepress dev docs`
-`npx vuepress build docs`
-這兩個常用的指令我們可以加到 npm script 裡面，會很方便喔！
+`npx vuepress dev docs`  
+`npx vuepress build docs`  
+這兩個常用的指令我們可以加到 npm script 裡面，會很方便喔！  
 :::
 
 ## 我想只有這樣還不夠！

@@ -9,6 +9,7 @@
   },
   "main": "index.js",
   "dependencies": {
+    "vuepress-plugin-container": "^2.1.0",
     "vuetify": "^2.0.0"
   },
   "devDependencies": {
