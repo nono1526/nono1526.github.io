@@ -1,0 +1,6 @@
+[[redirects]]
+  from = "https://nonotw.com/*"
+  to = "https://blog.nonotw.com/:splat"
+[[redirects]]
+  from = "https://nonotw.netlify.com/*"
+  to = "https://blog.nonotw.com/:splat"
