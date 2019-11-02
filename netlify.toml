@@ -1,3 +1,6 @@
+[build]
+  command = "npm run build"
+  publish = ".vuepress/dist/"
 [[redirects]]
   from = "https://nonotw.com/*"
   to = "https://blog.nonotw.com/:splat"
