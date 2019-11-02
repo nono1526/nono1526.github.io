@@ -2,6 +2,12 @@
   command = "npm run build"
   publish = "blog/.vuepress/dist/"
 [[redirects]]
+  from = "https://nonotw.com"
+  to = "https://blog.nonotw.com"
+[[redirects]]
+  from = "https://nonotw.netlify.com"
+  to = "https://blog.nonotw.com"
+[[redirects]]
   from = "https://nonotw.com/*"
   to = "https://blog.nonotw.com/:splat"
   status = 301
