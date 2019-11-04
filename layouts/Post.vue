@@ -1,7 +1,7 @@
 <template>
   <v-container class="vuetify__content">
     
-    <v-card class="py-3 px-10 my-3">
+    <v-card class="py-3 px-md-10 px-3 my-3">
       <Content slot-key="header"/>
       <div>
         <span>{{ formatDate }}</span>
