@@ -6,7 +6,7 @@ date: 2019-04-17
 author: Nono
 location: Kaohsiung
 summary: 高雄新鮮人前端工程師求職心得
-cover: https://i.imgur.com/RKNJLEv.jpg
+cover: https://i.imgur.com/f9djiFy.jpg
 ---
 ::: slot header
 # 高雄新鮮人前端工程師求職心得
