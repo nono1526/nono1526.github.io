@@ -12,7 +12,7 @@
       </div>
       <Content/>
     </v-card>
-    <v-card>
+    <v-card class="py-3 px-md-10 px-3 my-3">
       <ClientOnly>
         <Disqus
           :title="$page.title"
