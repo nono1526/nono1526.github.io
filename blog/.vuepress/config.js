@@ -5,6 +5,11 @@ module.exports = {
   head: [
     ['link', { rel: "icon", type: "image/png", sizes: "32x32", href: "/favicons/favicon-32x32.png"}],
   ],
+  plugins: {
+    disqus: {
+
+    }
+  },
   themeConfig: {
     nav: [
       {

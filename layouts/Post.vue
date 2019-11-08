@@ -12,6 +12,11 @@
       </div>
       <Content/>
     </v-card>
+    <v-card>
+      <ClientOnly>
+        <Disqus shortname="nono995" />
+      </ClientOnly>
+    </v-card>
   </v-container>
 </template>
 
