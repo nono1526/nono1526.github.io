@@ -14,7 +14,10 @@
     </v-card>
     <v-card>
       <ClientOnly>
-        <Disqus shortname="nono995" />
+        <Disqus
+          :title="$page.title"
+          :identifier="$page.regularPath"
+          shortname="nono995" />
       </ClientOnly>
     </v-card>
   </v-container>
@@ -24,6 +27,11 @@
 export default {
   created () {
     console.log(this.$page)
+  },
+  methods: {
+    getSiteOrigin () {
+      return window.location.origin
+    }
   },
   computed: {
     formatDate () {
