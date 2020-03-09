@@ -1,13 +1,14 @@
 ---
-title: [筆記] Javascript 中的 Plain Object
-tags: 
-  - javascript
+title: '[筆記] JavaScript 中的 Plain Object'
+tags:
+  - js
 date: 2020-03-09
 author: Nono
 location: Kaohsiung
-summary: 
+summary: 探索 JavaScript 中的 Plain Object
 cover: https://i.imgur.com/gVg6XN6.png
 ---
+
 ::: slot header
 # [筆記] Javascript 中的 Plain Object
 :::
