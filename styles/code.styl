@@ -1,18 +1,18 @@
 
 {$contentClass}
   code
-    color lighten($textColor, 20%)
     padding 0.1rem 0.2rem
     margin 0.1rem
-    font-size 0.7em
-    background-color rgba(27,31,35,0.05)
-    border-radius 15px
+    font-size 0.8rem
+    background-color rgba($textColor, .05)
+    box-shadow none
+    color #2E2F3E
+    font-weight 500
     .token
       &.deleted
         color #EC5975
       &.inserted
         color $accentColor
-
 {$contentClass}
   pre, pre[class*="language-"]
     line-height 1.4
@@ -21,12 +21,16 @@
     background-color $codeBgColor
     border-radius 6px
     overflow auto
+    margin 1.6em 0
     code
       color #fff
       padding 0
       background-color transparent
       border-radius 0
-      font-size 1em
+      font-size .8rem
+      font-weight 500
+      &::before
+        display none
       .token
         &.keyword
           color lighten($textColor, 30%)
@@ -43,7 +47,6 @@
 div[class*="language-"]
   position relative
   background-color $codeBgColor
-  border-radius 6px
   .highlight-lines
     user-select none
     padding-top 1.3rem

@@ -5,19 +5,19 @@ $listLayoutClass = '.vuetify__list'
 @require './code.styl'
 @require './font.styl'
 *
-  font-family -apple-system, BlinkMacSystemFont, "Noto Sans TC", "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", sans-serif
+  font-family -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Helvetica, Roboto, Arial, "PingFang TC", "Microsoft JhengHei", "微軟正黑", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"
 
 
 html, body
   padding 0
   margin 0
   background-color #fff
+  font-size 1.1rem
 
 body
-  font-family -apple-system, BlinkMacSystemFont, "Noto Sans TC", "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", sans-serif
+  font-family -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Helvetica, Roboto, Arial, "PingFang TC", "Microsoft JhengHei", "微軟正黑", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"
   -webkit-font-smoothing antialiased
   -moz-osx-font-smoothing grayscale
-  font-size 14px
   color $textColor
 
 {$$listLayoutClass}
@@ -79,15 +79,19 @@ ul, ol
   padding-left 1.2em
 
 strong
-  font-weight 600
+  font-weight 500
+
+.article-mate
+  font-size .8rem
+  margin-bottom 1.5em
 
 h1, h2, h3, h4, h5, h6
   font-weight 600
   line-height 1.25
   font-family Helvetica
-  margin-bottom 0.6rem
-  a
-    color lighten(#56CBF9, 30%)!important
+  margin-top 1em
+  margin-bottom 1em
+  color #282828
   {$contentClass}:not(.custom) > &
     margin-top (0.5rem - $navbarHeight)
     padding-top ($navbarHeight + 1rem)
@@ -104,25 +108,20 @@ h1, h2, h3, h4, h5, h6
     opacity: 1
 
 h1
-  font-size 2.4rem
+  font-size 2rem
   border-bottom 1px solid #eaeaea
   padding-bottom 0.3rem
 h2
-  font-size 1.65rem
-  font-weight normal
-  padding .3rem
-  padding-left .6rem
-  background-color $h2Color
-  color #fff
+  font-size 1.7rem
   border-radius 3px
   .header-anchor
     transform translateX(-10px)
-
 h3
-  font-size 1.40rem
-  border-bottom 1px solid #eaeaea
+  margin-top .8em
+  margin-bottom .8em
+  font-size 1.3rem
 h4
-  font-size 1rem
+  font-size 1.1rem
   color #a5a5a5
 a.header-anchor
   font-size 0.85em
@@ -138,9 +137,14 @@ a.header-anchor
 code, kbd, .line-number
   font-family source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace
 
+ul, ol
+  margin-top 1em
+  margin-left .5em
+
 p, ul, ol
-  line-height 1.7
-  font-size: 18px
+  line-height 1.3
+  font-size 1rem
+  margin-bottom .5em
   li
     padding-top 0.4em
     padding-bottom 0.4em

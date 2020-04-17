@@ -3,7 +3,7 @@
     
     <v-card class="py-3 px-md-10 px-3 my-3">
       <Content slot-key="header"/>
-      <div>
+      <div class="article-mate">
         <span>{{ formatDate }}</span>
         <v-icon small>mdi-folder</v-icon>
         <span class="text-right" v-for="(tag, i) in $page.frontmatter.tags" :key="i">
