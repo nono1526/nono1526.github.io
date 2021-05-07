@@ -25,9 +25,6 @@
 
 <script>
 export default {
-  created () {
-    console.log(this.$page)
-  },
   methods: {
     getSiteOrigin () {
       return window.location.origin
