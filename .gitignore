@@ -11,4 +11,4 @@ node_modules/
 .env
 
 # vuepress build output
-/.vuepress/dist
+blog/.vuepress/dist
