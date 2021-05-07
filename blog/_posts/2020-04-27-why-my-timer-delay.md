@@ -8,9 +8,9 @@ location: Taipei
 summary: 從 Event Loop 的角度探討為何 setTimeout 為何會有延遲現象發生
 cover: https://i.imgur.com/gVg6XN6.png
 ---
-
+::: slot header
 # 怎麼 setTimeout 遲到了？
-
+:::
 ## 從 Event Loop 的角度探討為何 setTimeout 為何會有延遲現象發生
 
 ### setTimeout 不準了
