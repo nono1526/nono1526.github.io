@@ -18,9 +18,9 @@ cover: https://i.imgur.com/gVg6XN6.png
 但我們可能會遇到 setTimeout 時間不準的問題，如下：
 
 設一個 timer 在 100ms 之後執行， 算出執行的時間過了多久。
-``可以發現此時得到的結果，就已經不是精確的 100ms 了。
+可以發現此時得到的結果，就已經不是精確的 100ms 了。
 
-```jsx
+```javascript
 var start = new Date().getTime()
   window.setTimeout(() => {
   console.log(new Date().getTime() - start)
@@ -31,7 +31,7 @@ var start = new Date().getTime()
 
 在做 setTimeout 後面加一些複雜的操作，像沒優化過的費氏數列。可以發現印出來的時間被延後了！
 
-```jsx
+```javascript
 var start = new Date().getTime()
 window.setTimeout(() => {
   console.log(new Date().getTime() - start)
@@ -42,7 +42,7 @@ for (var i = 0; i < 500e6; i++) {
 }
 ```
 
-```jsx
+```javascript
 var start = new Date().getTime()
 setTimeout(() => {
   console.log(new Date().getTime() - start)
