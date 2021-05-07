@@ -19,7 +19,7 @@ Vue.js 資料響應式這個部分，Vue 3 是使用 `Proxy` 來實作，而 Vue
 
 先從一個簡單的 Vue 例子來看看資料響應：
 
-```jsx
+```javascript
 const component = new Vue({
 	template: `
 		<div>{{ name }}</div>
@@ -58,7 +58,7 @@ const component = new Vue({
 
 到目前總結 data 被傳遞的 function stack。
 
-![%5B%E6%B7%B1%E5%85%A5%E4%BA%86%E8%A7%A3%20Vue%5D%20%E5%AD%B8%E7%BF%92%20Vue2%20%E9%9F%BF%E6%87%89%E5%BC%8F%E5%8E%9F%E7%90%86%EF%BC%8C%E4%B8%A6%E5%AF%A6%E4%BD%9C%E7%B0%A1%E6%98%93%E7%89%88%E6%9C%AC%2038dd3283415745df8cc5f11a201ba79f/Untitled.png](%5B%E6%B7%B1%E5%85%A5%E4%BA%86%E8%A7%A3%20Vue%5D%20%E5%AD%B8%E7%BF%92%20Vue2%20%E9%9F%BF%E6%87%89%E5%BC%8F%E5%8E%9F%E7%90%86%EF%BC%8C%E4%B8%A6%E5%AF%A6%E4%BD%9C%E7%B0%A1%E6%98%93%E7%89%88%E6%9C%AC%2038dd3283415745df8cc5f11a201ba79f/Untitled.png)
+![vue reactivity function stack](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/c48c745b-92f8-4e82-9949-960c425be289/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20210507%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20210507T013348Z&X-Amz-Expires=86400&X-Amz-Signature=8fc137243e42f2e73f2de32b40a854b4bf07e952b0a65f7dbf3f020d845bad7e&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22)
 
 ### `defineReactive`
 
@@ -68,7 +68,7 @@ const component = new Vue({
 
 可以簡化成這樣：
 
-```jsx
+```javascript
 Object.defineProperty(obj, key, {
 	enumerable: true,
   configurable: true,
@@ -87,11 +87,9 @@ Object.defineProperty(obj, key, {
 
 看到這邊你可能聽過 Vue 響應式原理的核心 - **依賴追蹤**，就是待會會講到的 Dep，沒聽過沒關係，我們繼續看下去。
 
-`src/core/observer/dep.js`
-
 我們先別管 Dep 做了些什麼，我們先來想想當我們可以在拿到資料 (get)、和設定資料 (set) 的時候做些什麼，那我們應該可以做下面這些事情。
 
-```jsx
+```javascript
 Object.defineProperty(obj, key, {
 	enumerable: true,
   configurable: true,
@@ -110,12 +108,12 @@ Object.defineProperty(obj, key, {
 ```
 
 ### dep.js - Dep
-
+`src/core/observer/dep.js`  
 Dep 就是一個觀察者模式中的訂閱者，裡面可以註冊多個 subs (發佈者)，我先把 vue 裡面實作先簡化成以下這樣。
 
 值得注意的是，因為 `defineProperty` 那邊沒辦法丟進傳進參數，所以是使用 `Dep` 的 static 來存放目前正在被處理的 `target`。
 
-```jsx
+```javascript
 class Dep {
 	static target // 需要儲存目前 target 的 sub
 	constructor () {
@@ -137,7 +135,7 @@ class Dep {
 
 每個 sub 可以先簡單想像會有一個 `update` 的 function 是 callback，像是更新畫面之類的 function。
 
-```jsx
+```javascript
 class Watcher {
 	constructor (key, callback) {
 		this.update = callback
@@ -148,13 +146,13 @@ class Watcher {
 
 接下來我們回到 `defineReactive`，並加入 `Dep`。
 
-```jsx
+```javascript
 function defineReactive (obj, key, val) {
 	const dep = new Dep()
 
 	Object.defineProperty(obj, key, {
 		enumerable: true,
-	  configurable: true,
+	  configurable: true,****
 		get () {
 			if (Dep.target) {
 				dep.addSubs(Dep.target)
@@ -181,7 +179,7 @@ function defineReactive (obj, key, val) {
 
 這邊我們就簡單舉例：Dep.target 是會更新畫面的依賴，程式碼可能是像這樣如下。
 
-```jsx
+```javascript
 // render 畫面
 function updateTemplate (key) {
   const div = document.createElement('div')
@@ -197,9 +195,9 @@ data[key] // 這裡是為了觸發 data[key] 的 getter 來收集依賴
 Dep.target = null // 做完了把 Dep.target 清掉
 ```
 
-上面其實也可以把 data[key] 直接改成呼叫 updateTemplate，因為 updateTemplate 中也會去觸發 data[key] 的 getter。
+上面其實也可以把 `data[key]` 直接改成呼叫 updateTemplate，因為 updateTemplate 中也會去觸發 `data[key]` 的 getter。
 
-```jsx
+```javascript
 
 // render 畫面
 function updateTemplate (key) {
@@ -225,7 +223,7 @@ Dep.target = null // 避免之後每次 getter 都收集依賴
 
 最後做一個超級簡易版本的畫面響應來做為結束。
 
-```jsx
+```javascript
 const data = {
   name: 'Nono'
 }
@@ -306,7 +304,7 @@ data.name = 'Cindy'
 
 ## 總結
 
-實際上 Vue 裡面的 watch、computed 也是透過這個依賴追蹤的機制來實現的，Vue 在這邊將這部分的程式碼共用的很好，但如果直接去閱讀 source code 可能會有很多部分是不好瞭解的。
+實際上 Vue 裡面的 watch、computed 也是透過這個依賴追蹤的機制來實現的，Vue 在這邊將這部分的程式碼共用的很好，但如果直接去閱讀 source code 會因為牽扯到要用到其他部分，所以比較難閱讀，所以這次我們就主要 focus 在依賴追蹤這部分。
 
 最後我們學習了：
 
