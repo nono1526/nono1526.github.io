@@ -27,7 +27,7 @@
               </v-card-title>
             </v-img>
           </router-link>
-          <v-card-text>{{ page.frontmatter.summary || page.summary }}</v-card-text>
+          <v-card-text class="card__text">{{ page.frontmatter.summary || page.summary }}</v-card-text>
           <v-card-actions class="mt-auto">
             <v-btn color="amber lighten-2" small outlined :to="page.path">read more</v-btn>
             <v-spacer></v-spacer>
@@ -66,17 +66,20 @@ export default {
 </script>
 
 <style lang="sass">
+  .card__text
+    min-height: 80px
   .out-wrapper
     max-width: 1080px
   .bottom-gradient
-    background-image: linear-gradient(to top right, rgba(100,115,201,.33), rgba(25,32,72,.7))
+    background: linear-gradient(to top right, rgba(0, 0, 0, 0.45), transparent)
     text-decoration: none
-    transition: .6s
+    transition: background-image 1s
     background-size: 100%
-    background-position: 0 0
+
+    transition: .5s
 
     &:hover
       background-size: 100%
-      background-image: linear-gradient(to top, rgba(0, 0, 0, 0.4) 0%, transparent 72px)
+      transition: background-image 1s 
  
 </style>  
