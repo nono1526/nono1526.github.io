@@ -1,7 +1,7 @@
 <template>
   <v-container class="vuetify__content">
     
-    <v-card class="py-3 px-md-10 px-3 my-3">
+    <v-card class="py-3 px-md-10 px-3 my-3" outlined tile>
       <Content slot-key="header"/>
       <div class="article-mate">
         <span>{{ formatDate }}</span>
@@ -12,7 +12,7 @@
       </div>
       <Content/>
     </v-card>
-    <v-card class="py-3 px-md-10 px-3 my-3">
+    <v-card class="py-3 px-md-10 px-3 my-3" outlined tile>
       <ClientOnly>
         <Disqus
           :title="$page.title"
