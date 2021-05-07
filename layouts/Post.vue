@@ -1,6 +1,5 @@
 <template>
   <v-container class="vuetify__content">
-    
     <v-card class="py-3 px-md-10 px-3 my-3" outlined tile>
       <Content slot-key="header"/>
       <div class="article-mate">
