@@ -9,6 +9,9 @@ location: Taipei
 summary: 從 Vue 的原始碼中探討 Vue 是如何做到資料響應式這個功能的，並且做一個簡易的版本
 cover: https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Vue.js_Logo_2.svg/1200px-Vue.js_Logo_2.svg.png
 ---
+::: slot header
+# [深入了解 Vue] 學習 Vue2 響應式原理，並實作簡易版本
+:::
 從 Vue 的原始碼中探討 Vue 是如何做到資料響應式這個功能的，並且做一個簡易的版本。
 
 Vue.js 資料響應式這個部分，Vue 3 是使用 `Proxy` 來實作，而 Vue 2 版本是使用 `Object.defineProperty` 來實作的，這邊主要是探討 Vue2 版本的做法。
